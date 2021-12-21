@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang người dùng</title>
+   <!--Jquery-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" referrerpolicy="no-referrer"></script>
+    <!--CSS-->
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <!--Socket.io-->
+    <script src="/socket.io/socket.io.js"></script>
+    <!--JS-->
+    <script src="/javascripts/main.js"></script>
+    <!--GG font-->
+    <script src="https://kit.fontawesome.com/ad26ff53c9.js" crossorigin="anonymous"></script>
+</head>
+
+<body><!--Modal-->
+    <div class="tnd-modal">
+        <div class="box-tnd-madal">
+            <div class="tnd-modal-create-user">
+                <div class="header">
+                    <div class="close"></div>
+                    <div class="title">
+                        <p>Thêm người dùng</p>
+                    </div>
+                    <div class="close">
+                        <button class="close-tnd-modal"><i class="fas fa-times"></i></button>
+                    </div>
+                </div>
+                <div class="line"></div>
+                <div class="content">
+                    <div class="item">
+                    	<p>Tên người dùng</p>
+                    </div>
+                    <div class="item">
+                    	<input type="text" class="tnd-name" placeholder="Tên người dùng">
+                    </div>
+                    <div class="item">
+                    	<p>Tài khoản</p>
+                    </div>
+                    <div class="item">
+                    	<input type="text" class="tnd-username" placeholder="Tài khoản">
+                    </div>
+                    <div class="item">
+                    	<p>Mật khẩu</p>
+                    </div>
+                    <div class="item">
+                    	<input type="password" class="tnd-password" placeholder="Mật khẩu">
+                    </div>
+                    <div class="item">
+                    	<p>Nhập lại mật khẩu</p>
+                    </div>
+                    <div class="item">
+                    	<input type="password" class="tnd-password2" placeholder="Nhập lại mật khẩu">
+                    </div>
+                    <div class="item">
+                    	<p>Phòng/Khoa</p>
+                    </div>
+                    {{#each phongkhoa as |pk|}}
+                        <div class="item tnd-item-box-phongkhoa">
+                            <input type="checkbox" id="tnd-phongkhoa{{pk.idphongkhoa}}" name="tnd-phongkhoa" value="{{pk.idphongkhoa}}">
+                            <label for="phongkhoa{{pk.idphongkhoa}}"> {{pk.name}}</label><br>
+                        </div>	
+                    {{/each}}
+
+                    <div class="item item-tnd-error">
+                    	{{!-- <p class="error">
+                    		Vui lòng nhập đầy đủ thông tin!
+                    	</p>
+                    	<p class="success">
+                    		Thêm tài khoản thành công
+                    	</p> --}}
+                    </div>
+
+                    <div class="item">
+                    	<div class="box-btn-create-user">
+                    		<button onclick="createUser()">Thêm người dùng</button>
+                    	</div>
+                    </div>		
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!--//**************//-->
+    <div class="home" id="home">
+         <div class="sidebar" data-chucvu="{{user.chucvu}}">
+            <div class="item avt">
+                <a href="/trangcanhan/{{user._id}}">
+                    <div class="box-avt">
+                        <img src="/images/{{user.avt}}" alt="AVT">
+                    </div>
+                </a>
+            </div>
+            <!---->
+            <a href="/trangcanhan/{{user._id}}">
+                <div class="item name">
+                    <p><a href="/trangcanhan/{{user._id}}">{{user.name}}</a></p>
+                </div>
+            </a>
+            <!---->
+
+            <div class="box-item-slidebar">
+                
+                <a href="/">
+                    <div class="itemlink linkhome">
+                        <p><i class="fas fa-home"></i> Trang chủ</p>
+                    </div>
+                </a>
+                <!---->
+                <a href="/trangthongtincanhan">
+                    <div class="itemlink linkinfo">
+                        <p><i class="fas fa-pen"></i> Thông tin cá nhân</p>
+                    </div>
+                </a>
+                <!---->
+                <a href="">
+                    <div class="itemlink linknotification">
+                        <p><i class="fas fa-bell"></i> Thông báo</p>
+                    </div>
+                </a>
+                <!---->
+                <a href="">
+                    <div class="itemlink linkuser">
+                        <p><i class="fas fa-users"></i> Người dùng</p>
+                    </div>
+                </a>
+                <!---->
+                <a href="">
+                    <div class="itemlink linkchangepassword
+    ">
+                        <p><i class="fas fa-key"></i> Đổi mật khẩu</p>
+                    </div>
+                </a>
+                <!---->
+                <a href="/logout">
+                    <div class="itemlink linklogout">
+                        <p><i class="fas fa-sign-out-alt"></i> Đăng xuất</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="root">
+            <div class="hearder">
+                <div class="btn-side">
+                    <button id="btn-close-open-sidebar" onclick="openOrCloseSidebar('open')"><i class="fas fa-bars"></i></button>
+                </div>
+                <div class="avt-name">
+                    <div class="avt">
+                        <img src="/images/{{user.avt}}" alt="AVT">
+                    </div>
+                    <a href="/trangcanhan/{{user._id}}">{{user.name}}</a>
+                </div>
+            </div>
+            <div class="timeline-notification">
+                <div class="tnd-timeline">
+                	<div class="item">
+                		<p class="title">Tài khoản người dùng</p>
+                	</div>
+
+                	<div class="item">
+                		<div class="box-button-add-user">
+                			<button class="open-tnd-modal">Thêm tài khoản</button>
+                		</div>
+                	</div>
+
+                	<div class="item">
+                		<div class="a">
+                			<p>STT</p>
+                		</div>
+                		<div class="b">
+                			<p>Tài khoản</p>
+                		</div>
+                		<div class="c">
+                			<p>Tên</p>
+                		</div>
+                		<div class="d">
+                			<p>Khoa/Phòng</p>
+                		</div>
+                	</div>
+
+                	
+
+                    {{#each listuser as |u|}}
+                        {{#if u.chan}}
+                            <div class="item item-b">
+                                <div class="a">
+                                    <p>{{u.stt}}</p>
+                                </div>
+                                <div class="b">
+                                    <p>{{u.phongkhoa.username}}</p>
+                                </div>
+                                <div class="c">
+                                    <p>{{u.phongkhoa.name}}</p>
+                                </div>
+                                <div class="d">
+                                    {{#each u.phongkhoa.idkhoa as |pk|}}
+                                        <p>{{pk.name}}</p>
+                                    {{/each}}
+                                </div>
+                            </div>
+                        {{else}}
+                            <div class="item item-a">
+                                <div class="a">
+                                    <p>{{u.stt}}</p>
+                                </div>
+                                <div class="b">
+                                    <p>{{u.phongkhoa.username}}</p>
+                                </div>
+                                <div class="c">
+                                    <p>{{u.phongkhoa.name}}</p>
+                                </div>
+                                <div class="d">
+                                    {{#each u.phongkhoa.idkhoa as |pk|}}
+                                        <p>{{pk.name}}</p>
+                                    {{/each}}
+                                </div>
+                            </div>
+                        {{/if}}
+                    {{/each}}
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

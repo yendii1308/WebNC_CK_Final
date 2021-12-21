@@ -1,0 +1,1759 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap');
+
+
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Poppins', sans-serif;
+}
+
+:root {
+    --maunen: rgb(240, 245, 250);
+}
+
+body {
+    background-color: var(--maunen);
+}
+
+/*Trang dang nhap*/
+
+#login {
+    width: 100%;
+}
+
+#login .from-login {
+    width: 500px;
+    margin: auto;
+    margin-top: 120px;
+    box-sizing: border-box;
+    padding: 50px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+#login .from-login .item-login {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+#login .from-login .title p {
+    font-size: 35px;
+    font-weight: 500;
+    color: rgb(100, 100, 100);
+    text-align: center;
+    text-transform: uppercase;
+}
+
+#login .from-login .item-login input {
+    width: 100%;
+    font-size: 18px;
+    font-weight: 300;
+    box-sizing: border-box;
+    padding: 10px 10px;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid rgb(200, 200, 200);
+}
+
+#login .from-login .notification p {
+    font-size: 16px;
+    color: rgb(240, 10, 10);
+    font-weight: 300;
+    text-align: center;
+    max-width: 100%;
+}
+
+#login .from-login .item-login button {
+    width: 100%;
+    font-size: 18px;
+    padding: 10px 10px;
+    text-align: center;
+    border-radius: 5px;
+    background-color: rgb(0, 120, 255);
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+#login .from-login .item-login button:hover {
+    box-shadow: rgba(0, 120, 255, 0.24) 0px 3px 8px;
+}
+
+
+#login .from-login .line {
+    width: 90%;
+    margin: auto;
+    height: 1px;
+    margin-bottom: 20px;
+    background-color: rgb(200, 200, 200);
+}
+
+#login .from-login .login-with-gg {
+    border: 1px solid rgb(100, 100, 100);
+    box-sizing: border-box;
+    padding: 7px 0px;
+    border-radius: 5px;
+}
+
+#login .from-login .login-with-gg:hover {
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+#login .from-login .login-with-gg a {
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+}
+
+#login .from-login .login-with-gg a img {
+    height: 30px;
+}
+
+#login .from-login .login-with-gg a p {
+    line-height: 30px;
+    color: rgb(100, 100, 100);
+    margin-left: 10px;
+}
+
+
+/*Modal*/
+.modal,
+.tnd-modal,
+.ttb-modal,
+.tcttb-modal{
+    display: none;
+    position: fixed;
+    z-index: 101;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.3);
+    box-sizing: border-box;
+    padding: 100px 0px;
+}
+
+.modal .box-madal,
+.tnd-modal .box-tnd-madal,
+.ttb-modal .box-ttb-madal,
+.tcttb-modal .box-tcttb-madal{
+    width: 600px;
+    max-height: 100%;
+    overflow-x: scroll;
+    margin: auto;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 8px;
+    box-sizing: border-box;
+    padding: 0px 20px;
+}
+
+.modal .box-madal .line,
+.tnd-modal .box-tnd-madal .line,
+.ttb-modal .box-ttb-madal .line,
+.tcttb-modal .box-tcttb-madal .line{
+    width: 100%;
+    height: 1px;
+    background-color: rgb(200, 200, 200);
+}
+
+.modal .box-madal .modal-create-post,
+.tnd-modal .box-tnd-madal .tnd-modal-create-user,
+.ttb-modal .box-ttb-madal .ttb-modal-create-user,
+.tcttb-modal .box-tcttb-madal .tcttb-modal-create-user{
+    width: 100%;
+}
+
+.modal .box-madal .modal-create-post .header,
+.tnd-modal .box-tnd-madal .tnd-modal-create-user .header,
+.ttb-modal .box-ttb-madal .ttb-modal-create-user .header,
+.tcttb-modal .box-tcttb-madal .tcttb-modal-create-user .header{
+    width: 100%;
+    box-sizing: border-box;
+    padding: 20px 0px;
+    display: flex;
+}
+
+.modal .box-madal .modal-create-post .header .close,
+.tnd-modal .box-tnd-madal .tnd-modal-create-user .header .close,
+.ttb-modal .box-ttb-madal .ttb-modal-create-user .header .close,
+.tcttb-modal .box-tcttb-madal .tcttb-modal-create-user .header .close{
+    width: 30px;
+    min-width: 30px;
+    max-width: 30px;
+    height: 40px;
+}
+
+.modal .box-madal .modal-create-post .header .close button,
+.tnd-modal .box-tnd-madal .tnd-modal-create-user .header .close button,
+.ttb-modal .box-ttb-madal .ttb-modal-create-user .header .close button,
+.tcttb-modal .box-tcttb-madal .tcttb-modal-create-user .header .close button{
+    height: 40px;
+    background-color: rgb(0, 0, 0, 0);
+    border: none;
+    cursor: pointer;
+    float: right;
+}
+
+.modal .box-madal .modal-create-post .header .close button i,
+.tnd-modal .box-tnd-madal .tnd-modal-create-user .header .close button i,
+.ttb-modal .box-ttb-madal .ttb-modal-create-user .header .close button i,
+.tcttb-modal .box-tcttb-madal .tcttb-modal-create-user .header .close button i{
+    font-size: 20px;
+    line-height: 40px;
+    text-align: right;
+    color: rgb(150, 150, 150);
+}
+
+.modal .box-madal .modal-create-post .header .title,
+.tnd-modal .box-tnd-madal .tnd-modal-create-user .header .title,
+.ttb-modal .box-ttb-madal .ttb-modal-create-user .header .title,
+.tcttb-modal .box-tcttb-madal .tcttb-modal-create-user .header .title{
+    width: 100%;
+    height: 30px;
+}
+
+.modal .box-madal .modal-create-post .header .title p,
+.tnd-modal .box-tnd-madal .tnd-modal-create-user .header .title p,
+.ttb-modal .box-ttb-madal .ttb-modal-create-user .header .title p,
+.tcttb-modal .box-tcttb-madal .tcttb-modal-create-user .header .title p{
+    font-size: 27px;
+    font-weight: 500;
+    text-align: center;
+    padding: 0px;
+    margin: 0px;
+}
+
+.modal .box-madal .modal-create-post .content{
+    width: 100%;
+    box-sizing: border-box;
+    padding: 20px 0px;
+}
+
+.modal .box-madal .modal-create-post .content .item-content{
+    display: none;
+}
+
+.modal .box-madal .modal-create-post .content .avt-name{
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 20px;
+}
+
+.modal .box-madal .modal-create-post .content .avt-name .avt{
+    width: 30px;
+    height: 30px;
+    min-width: 30px;
+    border-radius: 50%;
+    border: 1px solid rgb(200, 200, 200);
+    overflow: hidden;
+}
+
+.modal .box-madal .modal-create-post .content .avt-name .avt img{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: 50%;
+}
+
+
+.modal .box-madal .modal-create-post .content .avt-name .name{
+    width: 100%;
+    height: 30px;
+    overflow: hidden;
+}
+
+.modal .box-madal .modal-create-post .content .avt-name .name p{
+    width: 100%;
+    line-height: 30px;
+    font-size: 17px;
+    margin-left: 10px;
+}
+
+.modal .box-madal .modal-create-post .content .inputcontent{
+    width: 100%;
+    box-sizing: border-box;
+    padding: 20px 0px;
+}
+
+.modal .box-madal .modal-create-post .content .inputcontent textarea{
+    width: 100%;
+    font-size: 15px;
+    font-weight: 300;
+    color: rgb(80, 80, 80);
+    resize: none;
+    outline: none;
+    border: none;
+}
+
+.modal .box-madal .modal-create-post .content .review-image{
+    width: 100%;
+    height: 100%;
+    max-height: 600px;
+    margin-top: 10px;;
+}
+
+.modal .box-madal .modal-create-post .content .review-image img{
+    width: 100%;
+    height: 100%;
+    max-height: 600px;
+    object-fit: cover;
+    object-position: 50%;
+}
+
+.modal .box-madal .modal-create-post .content .inputimage{
+    width: 100%;
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+
+.modal .box-madal .modal-create-post .content .inputimage label p{
+    font-size: 15px;
+    line-height: 20px;
+    color: rgb(100, 100, 100);
+    cursor: pointer;
+}
+
+.modal .box-madal .modal-create-post .content .inputimage label p i{
+    font-size: 18px;
+    line-height: 20px;
+    color: rgb(70, 189, 97);
+}
+
+.modal .box-madal .modal-create-post .content .inputimage input{
+    display: none;
+}
+
+.modal .box-madal .modal-create-post .content .inputlinkyoutube{
+    width: 100%;
+}
+
+
+.modal .box-madal .modal-create-post .content .inputlinkyoutube input{
+    width: 100%;
+    border: 1px solid rgb(200, 200, 200);
+    height: 30px;
+    border-radius: 15px;
+    box-sizing: border-box;
+    padding: 0px 10px;
+    line-height: 30px;
+    font-size: 14px;
+    font-weight: 300;
+    outline: none;
+}
+
+.modal .box-madal .modal-create-post .content .reviewyoutube{
+    margin-top: 20px;
+    position: relative;
+    padding-bottom: 75%;
+    height: 0;
+    overflow: hidden;
+}
+
+.modal .box-madal .modal-create-post .content .reviewyoutube iframe{
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.modal .box-madal .modal-create-post .content .button-port{
+    width: 100%;
+}
+
+.modal .box-madal .modal-create-post .content .button-port button{
+    width: 100%;
+    height: 35px;
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: 300;
+    color: white;
+    background-color: rgb(0, 100, 170);
+    border: none;
+    outline: none;
+    border-radius: 4px;
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.modal .box-madal .modal-create-post .content .button-port button:hover{
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.modal .box-madal .modal-create-post .content .delete-post{
+    width: 100%;
+    color: rgb(100, 100, 100);
+    font-size: 15px;
+    font-weight: 300;
+}
+
+.modal .box-madal .modal-create-post .content .button-delete button{
+    width: 100%;
+    height: 35px;
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: 300;
+    color: white;
+    background-color: rgb(250, 0, 0);
+    border: none;
+    outline: none;
+    border-radius: 4px;
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.modal .box-madal .modal-create-post .content .button-delete button:hover{
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+/*Modal trang  thêm người dùng*/
+
+
+
+
+/*Trang chu*/
+#home {
+    width: 100%;
+    display: flex;
+}
+
+#home .sidebar {
+    height: 100%;
+    width: 0px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: rgb(51, 72, 93);
+    overflow-x: hidden;
+    transition: width 0.5s ease;
+    padding-top: 60px;
+}
+
+#home .sidebar .item {
+    margin-bottom: 20px;
+    min-width: 250px;
+
+}
+
+#home .sidebar .avt {
+    width: 100%;
+}
+
+#home .sidebar a {
+    color: white;
+    text-decoration: none;
+}
+
+#home .sidebar .avt .box-avt {
+    width: 70px;
+    height: 70px;
+    margin: auto;
+    border-radius: 50%;
+    border: 2px solid white;
+    outline: hidden;
+}
+
+#home .sidebar .avt img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: 50%;
+}
+
+#home .sidebar .name {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0px 20px;
+}
+
+#home .sidebar .name p {
+    text-align: center;
+    color: white;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+#home .sidebar .name p a {
+    text-decoration: none;
+    color: white;
+}
+
+#home .sidebar .itemlink {
+    min-width: 250px;
+    height: 50px;
+    box-sizing: border-box;
+    padding: 0px 10px;
+}
+
+#home .sidebar .itemlink:hover {
+    background-color: rgb(71, 92, 113);
+    ;
+    cursor: pointer;
+
+}
+
+#home .sidebar .itemlink p {
+    font-size: 18px;
+    line-height: 50px;
+    font-weight: 300;
+}
+
+#home .sidebar .itemlink p a {
+    color: white;
+    text-decoration: none;
+}
+
+#home .sidebar .itemlink p i {
+    width: 30px;
+    height: 50px;
+    line-height: 50px;
+    font-size: 20px;
+    text-align: center;
+}
+
+
+
+#home .root {
+    width: 100%;
+    margin-left: 0px;
+    transition: margin 0.5s ease;
+}
+
+#home .root .hearder {
+    display: flex;
+    justify-content: space-between;
+    height: 60px;
+    width: 100%;
+    background-color: rgb(0, 100, 170);
+    position: fixed;
+    z-index: 100;
+}
+
+#home .root .hearder .btn-side {
+    height: 40px;
+    margin: 10px 20px;
+}
+
+#home .root .hearder .btn-side button {
+    height: 40px;
+    background-color: rgb(0, 0, 0, 0);
+    border: none;
+    font-size: 27px;
+    line-height: 40px;
+    color: white;
+    cursor: pointer;
+}
+
+#home .root .hearder .avt-name {
+    display: flex;
+    justify-content: flex-end;
+    min-width: 500px;
+    width: 500px;
+    transition: margin 0.5s ease;
+}
+
+#home .root .hearder .avt-name .avt {
+    width: 40px;
+    height: 40px;
+    margin: 10px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 1px solid white;
+}
+
+#home .root .hearder .avt-name .avt img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: 50%;
+}
+
+#home .root .hearder .avt-name a {
+    line-height: 60px;
+    font-size: 18px;
+    color: white;
+    font-weight: 400;
+    text-decoration: none;
+    margin-right: 20px;
+}
+
+#home .root .timeline-notification {
+    width: 100%;
+    display: flex;
+    margin-top: 80px;
+}
+
+#home .root .timeline-notification .timeline {
+    width: 100%;
+}
+
+#home .root .timeline-notification .timeline .box-timeline {
+    width: 600px;
+    min-width: 600px;
+    max-width: 600px;
+    margin: auto;
+
+}
+
+
+#home .root .timeline-notification .timeline .box-timeline .formpost {
+    box-sizing: border-box;
+    padding: 20px;
+    width: 100%;
+    border-radius: 7px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    background-color: white;
+}
+
+#home .root .timeline-notification .timeline .box-timeline .formpost .avt-inputcontent {
+    display: flex;
+
+}
+
+#home .root .timeline-notification .timeline .box-timeline .formpost .avt-inputcontent .avt {
+    width: 40px;
+    min-width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 1px solid rgb(220, 220, 220);
+}
+
+
+#home .root .timeline-notification .timeline .box-timeline .formpost .avt-inputcontent .avt img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50%;
+}
+
+#home .root .timeline-notification .timeline .box-timeline .formpost .avt-inputcontent .inputcontent {
+    width: 100%;
+    background-color: rgb(245, 245, 245);
+    border-radius: 30px;
+    margin-left: 10px;
+    cursor: pointer;
+    border: 1px solid rgb(230, 230, 230);
+
+}
+
+#home .root .timeline-notification .timeline .box-timeline .formpost .avt-inputcontent .inputcontent p {
+    line-height: 40px;
+    color: rgb(100, 100, 100);
+    font-size: 16px;
+    padding: 0px;
+    margin: 0px;
+    padding-left: 15px;
+    font-weight: 300;
+}
+
+#home .root .timeline-notification .timeline .box-timeline .formpost .line {
+    width: 100%;
+    height: 1px;
+    background-color: rgb(200, 200, 200);
+    margin: 20px 0px;
+}
+
+#home .root .timeline-notification .timeline .box-timeline .formpost .imagepost-linkyoutube {
+    width: 100%;
+    display: flex
+}
+
+#home .root .timeline-notification .timeline .box-timeline .formpost .imagepost-linkyoutube .imagepost,
+#home .root .timeline-notification .timeline .box-timeline .formpost .imagepost-linkyoutube .linkyoutube {
+    width: 50%;
+    cursor: pointer;
+    height: 40px;
+    border-radius: 7px;
+}
+
+#home .root .timeline-notification .timeline .box-timeline .formpost .imagepost-linkyoutube .imagepost:hover,
+#home .root .timeline-notification .timeline .box-timeline .formpost .imagepost-linkyoutube .linkyoutube:hover {
+    background-color: rgb(235, 235, 235);
+    cursor: pointer;
+}
+
+#home .root .timeline-notification .timeline .box-timeline .formpost .imagepost-linkyoutube .imagepost p,
+#home .root .timeline-notification .timeline .box-timeline .formpost .imagepost-linkyoutube .linkyoutube p {
+    text-align: center;
+    font-size: 16px;
+    line-height: 40px;
+    font-weight: 400;
+}
+
+#home .root .timeline-notification .timeline .box-timeline .formpost .imagepost-linkyoutube .imagepost p i {
+    color: rgb(70, 189, 97);
+}
+
+
+#home .root .timeline-notification .timeline .box-timeline .port {
+	box-sizing: border-box;
+    padding: 20px 0px;
+    width: 100%;
+    border-radius: 7px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    margin-top: 20px;
+    background-color: white;
+}
+
+#home .root .timeline-notification .timeline .box-timeline .port .line{
+	height: 1px;
+	background-color: rgb(230, 230, 230);
+	margin: 10px 20px;
+}
+
+#home .root .timeline-notification .timeline .box-timeline .port .avt-name-menu{
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	box-sizing: border-box;
+	padding: 0px 20px;
+}
+
+#home .root .timeline-notification .timeline .box-timeline .port .avt-name-menu .avt-name{
+	width: 80%;
+	display: flex;
+	justify-content: flex-start;
+}
+
+#home .root .timeline-notification .timeline .box-timeline .port .avt-name-menu .avt-name .avt{
+	width: 30px;
+	height: 30px;
+	min-width: 30px;
+	border-radius: 50%;
+	border: 1px solid rgb(200, 200, 200);
+}
+
+#home .root .timeline-notification .timeline .box-timeline .port .avt-name-menu .avt-name .avt img{
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+	object-fit: cover;
+	object-position: 50%;
+}
+
+#home .root .timeline-notification .timeline .box-timeline .port .avt-name-menu .avt-name .name{
+	width: 100%;
+}
+
+#home .root .timeline-notification .timeline .box-timeline .port .avt-name-menu .avt-name .name p{
+	line-height: 30px;
+	font-weight: 400;
+	font-size: 16px;
+	margin: 0px;
+	padding: 0px;
+	margin-left: 10px;
+}
+
+#home .root .timeline-notification .timeline .box-timeline .port .avt-name-menu .avt-name .name a{
+    text-decoration: none;
+    color: black;
+}
+
+#home .root .timeline-notification .timeline .box-timeline .port .avt-name-menu .avt-name .name p span{
+    line-height: 30px;
+    font-size: 12px;
+    font-weight: 200;
+    margin-left: 5px;
+}
+
+#home .root .timeline-notification .timeline .box-timeline .port .avt-name-menu .menu{
+	width: 20%;
+	display: flex;
+	position: relative;
+  	display: inline-block;
+}
+
+
+
+#home .root .timeline-notification .timeline .box-timeline .port .avt-name-menu .menu button{
+	background-color: rgb(0, 0, 0, 0);
+	border: none;
+	height: 30px;
+	cursor: pointer;
+	float: right;
+}
+
+#home .root .timeline-notification .timeline .box-timeline .port .avt-name-menu .menu button i{
+	padding: 0px;
+	margin: 0px;
+	font-size: 18px;
+	line-height: 30px;
+}
+
+#home .root .timeline-notification .timeline .box-timeline .port .avt-name-menu .menu .dropdown-menu{
+	display: none;
+  	position: absolute;
+  	right: 0;
+  	background-color: #f9f9f9;
+  	min-width: 160px;
+  	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  	z-index: 1;
+  	margin-top: 30px;
+  	border-radius: 7px;
+  	box-sizing: border-box;
+  	padding: 10px 0px;
+  	background-color: rgb(245, 245, 245);
+}
+
+#home .root .timeline-notification .timeline .box-timeline .port .avt-name-menu .menu .dropdown-menu button{
+	height: 35px;
+	width: 100%;
+	font-size: 16px;
+	font-weight: 300;
+	box-sizing: border-box;
+	padding: 0px 10px;
+	text-align: left;
+}
+
+#home .root .timeline-notification .timeline .box-timeline .port .avt-name-menu .menu .dropdown-menu button:hover{
+	background-color: rgb(230, 230, 230);
+}
+
+#home .root .timeline-notification .timeline .box-timeline .port .content{
+	width: 100%;
+	overflow: hidden;
+}
+
+#home .root .timeline-notification .timeline .box-timeline .port .content p{
+	font-size: 15px;
+	font-weight: 300;
+	color: rgb(80, 80, 80);
+	box-sizing: border-box;
+	padding: 0px 20px;
+    white-space: pre-wrap;
+}
+
+#home .root .timeline-notification .timeline .box-timeline .port .content .image{
+	width: 100%;
+	height: 100%;
+	max-height: 600px;
+	margin-top: 10px;
+	
+}
+
+#home .root .timeline-notification .timeline .box-timeline .port .content .image img{
+	width: 100%;
+	height: 100%;
+	max-height: 600px;
+	object-fit: cover;
+	object-position: 50%;
+}
+
+#home .root .timeline-notification .timeline .box-timeline .port .interact{
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	box-sizing: border-box;
+	padding: 0px 20px;
+}
+
+#home .root .timeline-notification .timeline .box-timeline .port .interact .box-interact{
+	width: 100%;
+	display: flex;
+}
+
+#home .root .timeline-notification .timeline .box-timeline .port .interact .box-interact .box-like,
+#home .root .timeline-notification .timeline .box-timeline .port .interact .box-interact .box-comment{
+	width: 50%;
+	display: flex;
+	justify-content: center;
+	height: 25px;
+	border-radius: 3px;
+}
+
+#home .root .timeline-notification .timeline .box-timeline .port .interact .box-interact .box-like .liked{
+	color: rgb(24, 113, 178);
+}
+
+#home .root .timeline-notification .timeline .box-timeline .port .interact .box-interact .box-like:hover,
+#home .root .timeline-notification .timeline .box-timeline .port .interact .box-interact .box-comment:hover{
+	background-color: rgb(230, 230, 230);
+	cursor: pointer;
+}
+
+#home .root .timeline-notification .timeline .box-timeline .port .interact .box-interact .box-like .like-count,
+#home .root .timeline-notification .timeline .box-timeline .port .interact .box-interact .box-comment .comment-count{
+	margin-right: 10px;
+}
+
+#home .root .timeline-notification .timeline .box-timeline .port .comments{
+	width: 100%;
+	box-sizing: border-box;
+	padding: 20px;
+    padding-top: 10px;
+	padding-bottom: 0px;
+    display: none;
+}
+
+#home .root .timeline-notification .timeline .box-timeline .port .comments .box-comments{
+	width: 100%;
+	border-top: 1px solid rgb(220, 220, 220);
+}
+
+#home .root .timeline-notification .timeline .box-timeline .port .comments .box-comments .item{
+	display: flex;
+	justify-content: flex-start;
+	width: 100%;
+	margin-top: 10px;
+}
+
+#home .root .timeline-notification .timeline .box-timeline .port .comments .box-comments .item .avt{
+	width: 30px;
+	height: 30px;
+	border-radius: 50%;
+	border: 1px solid rgb(220, 220, 220);
+	overflow: hidden;
+}
+
+#home .root .timeline-notification .timeline .box-timeline .port .comments .box-comments .item .avt img{
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	object-position: 50%;
+}
+
+#home .root .timeline-notification .timeline .box-timeline .port .comments .box-comments .item .name-content{
+	margin-left: 10px;
+}
+
+#home .root .timeline-notification .timeline .box-timeline .port .comments .box-comments .item .name-content p.name{
+	font-size: 15px;
+	font-weight: 400;
+}
+
+
+#home .root .timeline-notification .timeline .box-timeline .port .comments .box-comments .item .name-content p.name span{
+	font-size: 12px;
+	font-weight: 300;
+	color: rgb(150, 150, 150);
+}
+
+#home .root .timeline-notification .timeline .box-timeline .port .comments .box-comments .item .name-content p.content{
+	font-size: 14px;
+	font-weight: 200;
+}
+
+#home .root .timeline-notification .timeline .box-timeline .port .comments .box-comments .item .name-content p.content span{
+	font-size: 14px;
+	font-weight: 300;
+	color: rgb(200, 0, 0);
+	cursor: pointer;
+}
+
+#home .root .timeline-notification .timeline .box-timeline .port .comments .box-input-comments{
+	width: 100%;
+	overflow: hidden;
+	display: flex;
+	justify-content: space-around;
+	margin-top: 20px;
+}
+
+#home .root .timeline-notification .timeline .box-timeline .port .comments .box-input-comments .avt{
+	width: 30px;
+	height: 30px;
+	min-width: 30px;
+	border-radius: 50%;
+	border: 1px solid rgb(220, 220, 220);
+	overflow: hidden;
+	margin-right: 10px;
+}
+
+#home .root .timeline-notification .timeline .box-timeline .port .comments .box-input-comments .avt img{
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	object-position: 50%;
+}
+
+#home .root .timeline-notification .timeline .box-timeline .port .comments .box-input-comments .input-comment{
+	width: 100%;
+}
+
+#home .root .timeline-notification .timeline .box-timeline .port .comments .box-input-comments .input-comment input{
+	width: 100%;
+	border: 1px solid rgb(200, 200, 200);
+	border-radius: 15px;
+	height: 30px;
+	padding: 0px 10px;
+	box-sizing: border-box;
+	outline: none;
+}
+
+#home .root .timeline-notification .timeline .box-timeline .port .comments .box-input-comments .btn-send-comment{
+	width: 30px;
+	height: 30px;
+	min-width: 30px;
+}
+
+#home .root .timeline-notification .timeline .box-timeline .port .comments .box-input-comments .btn-send-comment button{
+	width: 30px;
+	background-color: rgb(0, 0, 0, 0);
+	border: 0px;
+	text-align: right;
+	font-size: 20px;
+	line-height: 30px;
+	padding: 0px;
+	margin: 0px;
+	cursor: pointer;
+	color: rgb(24, 113, 178);
+}
+
+
+#home .root .timeline-notification .notification-tmp {
+    width: 370px;
+    min-width: 370px;
+    max-width: 370px;
+    margin: 0px 20px;
+}
+
+#home .root .timeline-notification .notification {
+    width: 370px;
+    min-width: 370px;
+    max-width: 370px;
+    margin: 0px 20px;
+    position: fixed;
+    top: 80px;
+    right: 20px;
+    height: 100%;
+    overflow-x: scroll;
+}
+
+#home .root .timeline-notification .notification .new-notification{
+	box-sizing: border-box;
+	padding: 20px;
+	background-color: rgb(202, 232, 255);
+	border-radius: 7px;
+	margin-bottom: 20px;
+}
+
+#home .root .timeline-notification .notification a{
+	text-decoration: none;
+}
+
+
+
+#home .root .timeline-notification .notification .new-notification{
+	width: 100%;
+}
+
+#home .root .timeline-notification .notification .new-notification p{
+	color: rgb(100, 120, 255);
+	font-size: 16px;
+	word-wrap: break-word;
+    overflow: hidden;
+    max-height: 3.2em;
+    line-height: 1.6em;
+}
+
+#home .root .timeline-notification .notification .new-notification p.title{
+	color: rgb(10, 30, 255);
+	font-size: 17px;
+	word-wrap: break-word;
+    overflow: hidden;
+    max-height: 3.2em;
+    line-height: 1.6em;
+
+}
+
+
+
+#home .root .timeline-notification .notification .title-viewall{
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+}
+
+#home .root .timeline-notification .notification .title-viewall p{
+	line-height: 30px;
+	padding: 0px;
+	margin: 0px;
+	font-size: 18px;
+	font-weight: 500;
+	text-transform: uppercase;
+}
+
+#home .root .timeline-notification .notification .title-viewall i{
+	line-height: 30px;
+	font-size: 25px;
+	color: red;
+	margin-left: 3px;
+}
+
+#home .root .timeline-notification .notification .title-viewall a{
+	line-height: 30px;
+	padding: 0px;
+	margin: 0px;
+	font-size: 18px;
+	font-weight: 400;
+	text-decoration: none;
+	color: rgb(50, 70, 255);
+}
+
+
+#home .root .timeline-notification .notification .box-notification {
+    width: 100%;
+}
+
+#home .root .timeline-notification .notification .box-notification a {
+    text-decoration: none;
+}
+
+#home .root .timeline-notification .notification .box-notification .item {
+    margin: 20px 0px;
+    border-radius: 7px;
+    box-sizing: border-box;
+    padding: 20px;
+}
+
+#home .root .timeline-notification .notification .box-notification .item-a{
+	background-color: white;
+}
+
+#home .root .timeline-notification .notification .box-notification .item-b{
+	background-color: rgb(202, 232, 255);
+}
+
+#home .root .timeline-notification .notification .box-notification .item-a:hover {
+	background-color: rgb(240, 240, 240);
+}
+
+
+#home .root .timeline-notification .notification .box-notification .item-b:hover {
+	background-color: rgb(180, 222, 255);
+}
+
+#home .root .timeline-notification .notification .box-notification .item p.time {
+    font-size: 15px;
+    color: rgb(150, 150, 150);
+}
+
+#home .root .timeline-notification .notification .box-notification .item p.title {
+    font-size: 17px;
+    color: rgb(50, 50, 50);
+    font-weight: 500;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+    overflow: hidden;
+    max-height: 3.2em;
+    line-height: 1.6em;
+}
+
+#home .root .timeline-notification .notification .box-notification .item p.content {
+    font-size: 15px;
+    color: rgb(150, 150, 150);
+    display: block;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+    overflow: hidden;
+    max-height: 3.2em;
+    line-height: 1.6em;
+}
+
+
+
+/*Trang thong tin ca nhan*/ 
+#home .root .timeline-notification .timeline .tcn-timeline .tcn-avt{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 1px solid rgb(150, 150, 150);
+    overflow: hidden;
+    margin: auto;
+    margin-top: 50px;
+}
+
+#home .root .timeline-notification .timeline .tcn-timeline .tcn-avt img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50%;
+}
+
+#home .root .timeline-notification .timeline .tcn-timeline .tcn-item{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 20px;
+}
+
+#home .root .timeline-notification .timeline .tcn-timeline .tcn-item .a{
+    width: 25%;
+}
+
+#home .root .timeline-notification .timeline .tcn-timeline .tcn-item .a p{
+    line-height: 30px;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+
+#home .root .timeline-notification .timeline .tcn-timeline .tcn-item .b{
+    width: 75%;
+}
+
+#home .root .timeline-notification .timeline .tcn-timeline .tcn-item .b input[type="text"]{
+    height: 30px;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0px 10px;
+    border-radius: 7px;
+    border: none;
+    font-size: 18px;
+}
+
+#home .root .timeline-notification .timeline .tcn-timeline .tcn-item .b input[type="file"]{
+    display: none;
+}
+
+#home .root .timeline-notification .timeline .tcn-timeline .tcn-item .b label p{
+    line-height: 30px;
+    font-size: 17px;
+    height: 30px;
+    display: inline;
+    background-color: rgb(220, 220, 220);
+    box-sizing: border-box;
+    padding: 0px 10px;
+    border-radius: 7px;
+    cursor: pointer;
+} 
+
+#home .root .timeline-notification .timeline .tcn-timeline .tcn-item p.tcn-error{
+    font-size: 16px;
+    font-weight: 300;
+    color: rgb(255, 50, 50);
+}
+
+#home .root .timeline-notification .timeline .tcn-timeline .tcn-item p.tcn-success{
+    font-size: 16px;
+    font-weight: 300;
+    color: rgb(80, 200, 80);
+}
+
+#home .root .timeline-notification .timeline .tcn-timeline .tcn-item .tcn-btn button{
+    padding: 5px 10px;
+    border-radius: 7px;
+    background-color: rgb(0, 97, 250);
+    border: none;
+    color: white;
+    cursor: pointer;
+} 
+
+
+
+
+/*Trang đổi mật khẩu*/
+
+#home .root .timeline-notification .timeline .dmk-timeline{
+    margin-top: 60px;
+}
+
+#home .root .timeline-notification .timeline .dmk-timeline .item{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+#home .root .timeline-notification .timeline .dmk-timeline .item p.title{
+    font-size: 30px;
+    text-align: center;
+    font-weight: 400;
+}
+
+#home .root .timeline-notification .timeline .dmk-timeline .item .a{
+    width: 30%;
+}
+
+#home .root .timeline-notification .timeline .dmk-timeline .item .a p{
+    text-align: left;
+    line-height: 30px;
+    font-size: 18px;
+    font-weight: 400;
+
+}
+
+#home .root .timeline-notification .timeline .dmk-timeline .item .b{
+    width: 70%;
+}
+
+#home .root .timeline-notification .timeline .dmk-timeline .item .b input{
+    height: 30px;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0px 10px;
+    border-radius: 7px;
+    border: none;
+    font-size: 18px;
+}
+
+#home .root .timeline-notification .timeline .dmk-timeline .item .box-botton button{
+    padding: 5px 10px;
+    border-radius: 7px;
+    background-color: rgb(0, 97, 250);
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+#home .root .timeline-notification .timeline .dmk-timeline .item p.dmk-error{
+    font-size: 16px;
+    font-weight: 300;
+    color: rgb(255, 50, 50);
+}
+
+#home .root .timeline-notification .timeline .dmk-timeline .item p.dmk-success{
+    font-size: 16px;
+    font-weight: 300;
+    color: rgb(80, 200, 80);
+}
+
+
+/*trang người dùng*/
+#home .root .timeline-notification .tnd-timeline{
+    width: 1200px;
+    margin: auto;
+}
+
+#home .root .timeline-notification .tnd-timeline .item{
+    width: 100%;
+    box-sizing: border-box;
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+}
+
+#home .root .timeline-notification .tnd-timeline .item p{
+    line-height: 30px;
+}
+
+#home .root .timeline-notification .tnd-timeline .item p.title{
+    font-size: 30px;
+    font-weight: 400;
+    margin-top: 60px;
+}
+
+#home .root .timeline-notification .tnd-timeline .item .box-button-add-user{
+    width: 100%;
+}
+
+#home .root .timeline-notification .tnd-timeline .item .box-button-add-user button{
+    padding: 5px 10px;
+    border-radius: 7px;
+    background-color: rgb(0, 220, 97);
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 17px;
+    float: right;
+}
+
+#home .root .timeline-notification .tnd-timeline .item .a{
+    width: 5%;
+}
+
+#home .root .timeline-notification .tnd-timeline .item .a p{
+    text-align: center;
+}
+#home .root .timeline-notification .tnd-timeline .item .b{
+    width: 20%;
+}
+#home .root .timeline-notification .tnd-timeline .item .c{
+    width: 25%;
+
+}
+#home .root .timeline-notification .tnd-timeline .item .d{
+    width: 50%;
+
+}
+
+#home .root .timeline-notification .tnd-timeline .item-a{
+    background-color: white;
+}
+
+#home .root .timeline-notification .tnd-timeline .item .e .box-btn{
+    width: 90%;
+    margin: auto;
+}
+
+#home .root .timeline-notification .tnd-timeline .item .e .box-btn button{
+    width: 100%;
+    height: 30px;
+    background-color: rgb(0, 0, 0, 0);
+    border: none;
+    font-size: 17px;
+    color: red;
+    cursor: pointer;
+}
+
+/*Modal trang thêm người dùng*/
+.tnd-modal .box-tnd-madal .tnd-modal-create-user .content{
+    width: 100%;
+}
+
+.tnd-modal .box-tnd-madal .tnd-modal-create-user .content .item{
+    margin: 5px 0px;
+}
+
+.tnd-modal .box-tnd-madal .tnd-modal-create-user .content .item p{
+    font-size: 17px;
+    font-weight: 300;
+}
+
+.tnd-modal .box-tnd-madal .tnd-modal-create-user .content .item input[type='text'],
+.tnd-modal .box-tnd-madal .tnd-modal-create-user .content .item input[type='password']{
+    font-size: 15px;
+    font-weight: 200;
+    border: 1px solid rgb(200, 200, 200);
+    border-radius: 5px;
+    box-sizing: border-box;
+    padding: 0px 5px;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.tnd-modal .box-tnd-madal .tnd-modal-create-user .content .item input[type='checkbox']{
+    width: 23px;
+}
+
+.tnd-modal .box-tnd-madal .tnd-modal-create-user .content .item label{
+    font-size: 15px;
+    font-weight: 200;
+}
+
+.tnd-modal .box-tnd-madal .tnd-modal-create-user .content .item p.error{
+    font-size: 15px;
+    font-weight: 300;
+    color: rgb(255, 50, 50);
+    text-align: center;
+}
+
+.tnd-modal .box-tnd-madal .tnd-modal-create-user .content .item p.success{
+    font-size: 15px;
+    font-weight: 300;
+    color: rgb(80, 200, 80);
+    text-align: center;
+
+}
+
+.tnd-modal .box-tnd-madal .tnd-modal-create-user .content .item .box-btn-create-user{
+    width: 100%;
+}
+
+.tnd-modal .box-tnd-madal .tnd-modal-create-user .content .item .box-btn-create-user button{
+    width: 100%;
+    height: 35px;
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: 300;
+    color: white;
+    background-color: rgb(0, 100, 170);
+    border: none;
+    outline: none;
+    border-radius: 4px;
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    margin-bottom: 20px;
+}
+
+.tnd-modal .box-tnd-madal .tnd-modal-create-user .content .item .box-btn-create-user button:hover{
+   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+
+/*trang thông báo*/
+#home .root .timeline-notification .ttb-timeline{
+    width: 1200px;
+    margin: auto;
+}
+
+#home .root .timeline-notification .ttb-timeline .item{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    padding: 5px;
+}
+
+#home .root .timeline-notification .ttb-timeline .box-select{
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+#home .root .timeline-notification .ttb-timeline .item p{
+    font-size: 30px;
+    font-weight: 400;
+    margin-top: 60px;
+}
+
+#home .root .timeline-notification .ttb-timeline a{
+    text-decoration: none;
+    color: black;
+}
+
+#home .root .timeline-notification .ttb-timeline .item-b{
+    background-color: white;
+}
+
+#home .root .timeline-notification .ttb-timeline .item-a:hover,
+#home .root .timeline-notification .ttb-timeline .item-b:hover{
+    background-color: rgb(227, 237, 250);
+}
+
+
+#home .root .timeline-notification .ttb-timeline .item .box-select-notification{
+    width: 80%;
+}
+
+#home .root .timeline-notification .ttb-timeline .item .box-select-notification select{
+    width: 100%;
+    height: 36px;
+    font-size: 18px;
+    line-height: 36px;
+
+}
+
+#home .root .timeline-notification .ttb-timeline .item .box-create-notification{
+    width: 20%;
+}
+
+#home .root .timeline-notification .ttb-timeline .item .box-create-notification button{
+    padding: 3px 10px;
+    border-radius: 7px;
+    background-color: rgb(0, 220, 97);
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 15px;
+    float: right;
+}
+
+#home .root .timeline-notification .ttb-timeline .item p.title-notification{
+    width: 100%;
+    font-size: 18px;
+    margin-top: 0px;
+}
+
+#home .root .timeline-notification .ttb-timeline .item p.content-notification{
+    font-size: 16px;
+    overflow: hidden;
+    width: 100%;
+    margin-top: 0px;
+    font-weight: 300;
+    color: rgb(150, 150, 150);
+    margin-top: 10px;
+    text-align: justify;
+    white-space: pre-wrap;
+}
+
+#home .root .timeline-notification .ttb-timeline .item p.content-notification-limit{
+    max-height: 3.2em;
+    line-height: 1.6em;
+}
+
+#home .root .timeline-notification .ttb-timeline .item p.khoa-time{
+    font-size: 16px;
+    font-weight: 300;
+    margin-top: 0px;
+    color: rgb(150, 150, 150);
+    text-align: right;
+    width: 100%;
+    margin-top: 10px;
+    font-weight: 400;
+
+}
+
+#home .root .timeline-notification .ttb-timeline .item p.khoa-time span{
+    cursor: pointer;
+    color: rgb(255, 50, 50);
+}
+
+#home .root .timeline-notification .ttb-timeline .item-page{
+    margin-top: 20px;
+    padding-bottom: 50px;
+}
+
+#home .root .timeline-notification .ttb-timeline .item-page button.page{
+    margin-top: 20px;
+    width: 25px;
+    height: 25px;
+    margin: 5px;
+    border: 1px solid rgb(200, 200, 200);
+    background-color: white;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+#home .root .timeline-notification .ttb-timeline .item-page button.active,
+#home .root .timeline-notification .ttb-timeline .item-page button:hover{
+    background-color: rgb(0, 98, 170);
+    color: white;
+}
+
+.ttb-modal .box-ttb-madal .ttb-modal-create-user .content{
+    width: 100%;
+}
+
+.ttb-modal .box-ttb-madal .ttb-modal-create-user .content .item{
+    margin: 10px 0px;
+}
+
+.ttb-modal .box-ttb-madal .ttb-modal-create-user .content .item p{
+    font-size: 17px;
+    font-weight: 300;
+    width: 100%;
+}
+
+.ttb-modal .box-ttb-madal .ttb-modal-create-user .content .item input{
+    font-size: 15px;
+    font-weight: 200;
+    border: 1px solid rgb(200, 200, 200);
+    border-radius: 5px;
+    box-sizing: border-box;
+    padding: 0px 5px;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.ttb-modal .box-ttb-madal .ttb-modal-create-user .content .item select{
+    width: 100%;
+    font-size: 17px;
+}
+
+.ttb-modal .box-ttb-madal .ttb-modal-create-user .content .item textarea{
+    resize: none;
+    width: 100%;
+}
+
+.ttb-modal .box-ttb-madal .ttb-modal-create-user .content .item p.ttb-error{
+    font-size: 16px;
+    font-weight: 300;
+    color: rgb(255, 50, 50);
+    text-align: center;
+}
+
+.ttb-modal .box-ttb-madal .ttb-modal-create-user .content .item p.ttb-success{
+    font-size: 16px;
+    font-weight: 300;
+    color: rgb(80, 200, 80);
+    text-align: center;
+}
+
+
+.ttb-modal .box-ttb-madal .ttb-modal-create-user .content .item .ttb-box-button{
+    width: 100%;
+}
+
+
+.ttb-modal .box-ttb-madal .ttb-modal-create-user .content .item .ttb-box-button button{
+    padding: 3px 10px;
+    border-radius: 7px;
+    background-color: rgb(0, 220, 97);
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 15px;
+    float: right;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+
+/*Trang chi tiết thông báo*/
+
+.tcttb-modal .box-tcttb-madal .tcttb-modal-create-user .content{
+    width: 100%;
+}
+
+.tcttb-modal .box-tcttb-madal .tcttb-modal-create-user .content .item{
+    margin: 10px 0px;
+}
+
+.tcttb-modal .box-tcttb-madal .tcttb-modal-create-user .content .item p{
+    font-size: 17px;
+    font-weight: 300;
+    width: 100%;
+}
+
+.tcttb-modal .box-tcttb-madal .tcttb-modal-create-user .content .item input{
+    font-size: 15px;
+    font-weight: 200;
+    border: 1px solid rgb(200, 200, 200);
+    border-radius: 5px;
+    box-sizing: border-box;
+    padding: 0px 5px;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.tcttb-modal .box-tcttb-madal .tcttb-modal-create-user .content .item select{
+    width: 100%;
+    font-size: 17px;
+}
+
+.tcttb-modal .box-tcttb-madal .tcttb-modal-create-user .content .item textarea{
+    resize: none;
+    width: 100%;
+}
+
+.tcttb-modal .box-tcttb-madal .tcttb-modal-create-user .content .item p.tcttb-error{
+    font-size: 16px;
+    font-weight: 300;
+    color: rgb(255, 50, 50);
+    text-align: center;
+}
+
+.tcttb-modal .box-tcttb-madal .tcttb-modal-create-user .content .item p.tcttb-success{
+    font-size: 16px;
+    font-weight: 300;
+    color: rgb(80, 200, 80);
+    text-align: center;
+}
+
+
+.tcttb-modal .box-tcttb-madal .tcttb-modal-create-user .content .item .tcttb-box-button{
+    width: 100%;
+}
+
+
+.tcttb-modal .box-tcttb-madal .tcttb-modal-create-user .content .item .tcttb-box-button button{
+    padding: 3px 10px;
+    border-radius: 7px;
+    background-color: rgb(0, 220, 97);
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 15px;
+    float: right;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

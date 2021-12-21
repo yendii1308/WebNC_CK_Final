@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang chủ</title>
+    <!--Jquery-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" referrerpolicy="no-referrer"></script>
+    <!--CSS-->
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <!--Socket.io-->
+    <script src="/socket.io/socket.io.js"></script>
+    <!--JS-->
+    <script src="/javascripts/main.js"></script>
+    <!--GG font-->
+    <script src="https://kit.fontawesome.com/ad26ff53c9.js" crossorigin="anonymous"></script>
+</head>
+
+<body data-index="1" data-action="load" data-trang="trangchu">
+    <!--Modal-->
+    <div class="modal">
+        <div class="box-madal">
+            <div class="modal-create-post">
+                <div class="header">
+                    <div class="close"></div>
+                    <div class="title">
+                        <p>Bài viết</p>
+                    </div>
+                    <div class="close">
+                        <button class="close-modal"><i class="fas fa-times"></i></button>
+                    </div>
+                </div>
+                <div class="line"></div>
+                <div class="content">
+                    <div class="item-content avt-name">
+                        <div class="avt">
+                            <img src="/images/{{user.avt}}" alt="AVT">
+                        </div>
+                        <div class="name">
+                            <p>{{ user.name }}</p>
+                        </div>
+                    </div>
+
+                    <div class="item-content inputcontent">
+                        <textarea name="" id="" class="textarea-content" rows="6" placeholder="Cập nhật trạng thái của bạn"></textarea>
+                    </div>
+
+                    <div class="item-content review-image"></div>
+
+                    <div class="item-content inputimage">
+                        <label for="input-image-post"><p><i class="fas fa-images"></i> Thêm ảnh</p></label>
+                        <input id="input-image-post" name="input-image-post" type="file" accept="image/*">
+                    </div>
+
+                    <div class="item-content inputlinkyoutube">
+                        <input class="input-linkyoutube" type="text" placeholder="Đường dẫn liên kết youtube">
+                    </div>
+
+                    <div class="item-content reviewyoutube">
+                        
+                    </div>
+
+                    <div class="item-content button-port">
+                        <button class="btn-up-post" data-action="" data-type="" data-idpost="">
+                            Đăng
+                        </button>
+                    </div>
+
+                    <div class="item-content delete-post">
+                        <p>Sau khi xoá sẽ không thể phục hồi bài viết!</p>
+                    </div>
+                    <div class="item-content button-delete">
+                        <button class="button-delete-post" data-idpost="">
+                            Xoá
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--//**************//-->
+    <div class="home" id="home">
+        <div class="sidebar" data-chucvu="{{user.chucvu}}">
+            <div class="item avt">
+                <a href="/trangcanhan/{{user._id}}">
+                    <div class="box-avt">
+                        <img src="/images/{{user.avt}}" alt="AVT">
+                    </div>
+                </a>
+            </div>
+            <!---->
+            <a href="/trangcanhan/{{user._id}}">
+                <div class="item name">
+                    <p><a href="/trangcanhan/{{user._id}}">{{user.name}}</a></p>
+                </div>
+            </a>
+            <!---->
+
+            <div class="box-item-slidebar">
+                
+                <a href="/">
+                    <div class="itemlink linkhome">
+                        <p><i class="fas fa-home"></i> Trang chủ</p>
+                    </div>
+                </a>
+                <!---->
+                <a href="/trangthongtincanhan">
+                    <div class="itemlink linkinfo">
+                        <p><i class="fas fa-pen"></i> Thông tin cá nhân</p>
+                    </div>
+                </a>
+                <!---->
+                <a href="">
+                    <div class="itemlink linknotification">
+                        <p><i class="fas fa-bell"></i> Thông báo</p>
+                    </div>
+                </a>
+                <!---->
+                <a href="">
+                    <div class="itemlink linkuser">
+                        <p><i class="fas fa-users"></i> Người dùng</p>
+                    </div>
+                </a>
+                <!---->
+                <a href="">
+                    <div class="itemlink linkchangepassword
+    ">
+                        <p><i class="fas fa-key"></i> Đổi mật khẩu</p>
+                    </div>
+                </a>
+                <!---->
+                <a href="/logout">
+                    <div class="itemlink linklogout">
+                        <p><i class="fas fa-sign-out-alt"></i> Đăng xuất</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="root">
+            <div class="hearder">
+                <div class="btn-side">
+                    <button id="btn-close-open-sidebar" onclick="openOrCloseSidebar('open')"><i class="fas fa-bars"></i></button>
+                </div>
+                <div class="avt-name">
+                    <div class="avt">
+                        <img src="/images/{{user.avt}}" alt="AVT">
+                    </div>
+                    <a href="/trangcanhan/{{user._id}}">{{user.name}}</a>
+                </div>
+            </div>
+            <div class="timeline-notification">
+                <div class="timeline">
+                    <div class="box-timeline">
+                        <div class="formpost">
+                            <div class="avt-inputcontent">
+                                <div class="avt">
+                                   <img src="/images/{{user.avt}}" alt="AVT">
+                                </div>
+                                <div class="inputcontent">
+                                    <p>Cập nhật trạng thái mới của bạn.</p>
+                                </div>
+                            </div>
+                            <div class="line"></div>
+                            <div class="imagepost-linkyoutube">
+                                <div class="imagepost">
+                                    <p><i class="fas fa-images"></i> Ảnh</p>
+                                </div>
+                                <div class="linkyoutube">
+                                    <p><i class="fas fa-link"></i> Liên kết youtube</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="box-port">
+
+                            
+                            {{#each datapost as |post|}}
+                                {{#if post.chinhchu}}
+                                    <div class="port post-{{post.post._id}}">
+                                        <div class="avt-name-menu">
+                                            <div class="avt-name">
+                                                <div class="avt">
+                                                    <img src="/images/{{post.user.avt}}" alt="Avt">
+                                                </div>
+                                                <div class="name">
+                                                    <p><a href="/trangcanhan/{{post.user._id}}">{{post.user.name}}</a>  <span>{{post.post.time}}</span></p>
+                                                </div>
+                                            </div>
+                                            <div class="menu">
+                                                <button class="dropbtn" onclick="openOrCloseMenu('{{post.post._id}}')"><i class="fas fa-bars"></i></button>
+                                                <div class="dropdown-menu dropdown-menu-{{post.post._id}}">
+                                                    <button onclick="getPostToEdit('{{post.post._id}}')">Chỉnh sửa</button>
+                                                    <button onclick="getPostToDelete('{{post.post._id}}')">Xoá</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="line"></div>
+                                        <div class="contentport">
+                                            <div class="content">
+                                                
+                                                {{#if post.post.idyoutube }}
+                                                    <div class="post-youtube post-youtube-{{post.post._id}}">
+                                                        <iframe width="600" height="400" src="https://www.youtube.com/embed/{{post.post.idyoutube}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                                    </div>
+                                                {{else}}
+                                                    <p class="contentpost-{{post.post._id}}">{{post.post.content}}</p>
+                                                    <div class="image imagepost-{{post.post._id}}">
+                                                        {{#if post.post.image}}
+                                                            <a href="/images/{{post.post.image}}">
+                                                                <img src="/images/{{post.post.image}}" alt="image port">
+                                                            </a>
+                                                        {{/if}}
+                                                    </div>
+                                                {{/if}}
+                                            </div>
+                                        </div>
+                                        <div class="line"></div>
+                                        <div class="interact">
+                                            <div class="box-interact">
+                                                 <div class="box-like box-like-{{post.post._id}}" onclick="likePost('{{post.post._id}}')">
+                                                    <div class="like-count">
+                                                        <p>{{post.countLike}}</p>
+                                                    </div>
+                                                    <div class="like-icon liked">
+                                                        {{#if like}}
+                                                            <i class="fas fa-heart"></i>
+                                                        {{else}}
+                                                            <i class="far fa-heart"></i>
+                                                        {{/if}}
+                                                        
+                                                        {{!-- <i class="fas fa-heart"></i>
+                                                        <i class="far fa-heart"></i> --}}
+                                                    </div>
+                                                </div>
+                                                <div class="box-comment box-comment-{{post.post._id}}" onclick="openFormComment('{{post.post._id}}')">
+                                                    <div class="comment-count">
+                                                        <p>{{post.countComment}}</p>
+                                                    </div>
+                                                    <div class="comment-icon">
+                                                        <i class="far fa-comment"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="comments comments-{{post.post._id}}">
+                                            <div class="box-comments box-comments-{{post.post._id}}">
+                                                {{!-- <div class="item">
+                                                    <div class="avt">
+                                                        <img src="/images/{avt-xe.jpg}" alt="Avt">
+                                                    </div>
+                                                    <div class="name-content">
+                                                        <p class="name">Huỳnh Đăng Khoa
+                                                            <span>19:12 08/12/2021</span>
+                                                        </p>
+                                                        <p class="content">
+                                                            Đây là comment đầu tiên nè các bạn ơi
+                                                            <span>Xoá</span>
+                                                        </p>
+                                                    </div>
+                                                </div> --}}
+                                            </div>
+                                            <div class="box-input-comments">
+                                                <div class="avt">
+                                                    <img src="/images/{{post.avt}}" alt="AVT">
+                                                </div>
+                                                <div class="input-comment">
+                                                    <input class="input-comment-{{post.post._id}}" type="text" placeholder="Bình luận của bạn">
+                                                </div>
+                                                <div class="btn-send-comment">
+                                                    <button onclick="upComment('{{post.post._id}}')">
+                                                        <p><i class="fas fa-paper-plane"></i></p>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                {{else}}
+                                    <div class="port post-{{post.post._id}}">
+                                        <div class="avt-name-menu">
+                                            <div class="avt-name">
+                                                <div class="avt">
+                                                    <img src="/images/{{post.user.avt}}" alt="Avt">
+                                                </div>
+                                                <div class="name">
+                                                    <p><a href="/trangcanhan/{{post.user._id}}">{{post.user.name}}</a>  <span>{{post.post.time}}</span></p>
+                                                </div>
+                                            </div>
+                                            <div class="menu">
+                                            </div>
+                                        </div>
+                                        <div class="line"></div>
+                                        <div class="contentport">
+                                            <div class="content">
+
+                                                {{#if post.post.idyoutube }}
+                                                     <div class="post-youtube post-youtube-{{post.post._id}}">
+                                                        <iframe width="600" height="400" src="https://www.youtube.com/embed/{{post.post.idyoutube}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                                    </div>
+                                                {{else}}
+                                                    <p class="contentpost-{{post.post._id}}">{{post.post.content}}</p>
+                                                    <div class="image imagepost-{{post.post._id}}">
+                                                        {{#if post.post.image}}
+                                                            <a href="/images/{{post.post.image}}">
+                                                                <img src="/images/{{post.post.image}}" alt="image port">
+                                                            </a>
+                                                        {{/if}}
+                                                    </div>
+                                                {{/if}}
+                                                
+                                            </div>
+                                        </div>
+                                        <div class="line"></div>
+                                        <div class="interact">
+                                            <div class="box-interact">
+                                                <div class="box-like box-like-{{post.post._id}}" onclick="likePost('{{post.post._id}}')">
+                                                    <div class="like-count">
+                                                        <p>{{post.countLike}}</p>
+                                                    </div>
+                                                    <div class="like-icon liked">
+                                                        {{#if like}}
+                                                            <i class="fas fa-heart"></i>
+                                                        {{else}}
+                                                            <i class="far fa-heart"></i>
+                                                        {{/if}}
+                                                        
+                                                        {{!-- <i class="fas fa-heart"></i>
+                                                        <i class="far fa-heart"></i> --}}
+                                                    </div>
+                                                </div>
+                                                <div class="box-comment box-comment-{{post.post._id}}" onclick="openFormComment('{{post.post._id}}')">
+                                                    <div class="comment-count">
+                                                        <p>{{post.countComment}}</p>
+                                                    </div>
+                                                    <div class="comment-icon">
+                                                        <i class="far fa-comment"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                         <div class="comments comments-{{post.post._id}}">
+                                            <div class="box-comments box-comments-{{post.post._id}}">
+                                                {{!-- <div class="item">
+                                                    <div class="avt">
+                                                        <img src="/images/{avt-xe.jpg}" alt="Avt">
+                                                    </div>
+                                                    <div class="name-content">
+                                                        <p class="name">Huỳnh Đăng Khoa
+                                                            <span>19:12 08/12/2021</span>
+                                                        </p>
+                                                        <p class="content">
+                                                            Đây là comment đầu tiên nè các bạn ơi
+                                                            <span>Xoá</span>
+                                                        </p>
+                                                    </div>
+                                                </div> --}}
+                                            </div>
+                                            <div class="box-input-comments">
+                                                <div class="avt">
+                                                    <img src="/images/{{post.avt}}" alt="AVT">
+                                                </div>
+                                                <div class="input-comment">
+                                                    <input class="input-comment-{{post.post._id}}" type="text" placeholder="Bình luận của bạn">
+                                                </div>
+                                                <div class="btn-send-comment">
+                                                    <button onclick="upComment('{{post.post._id}}')">
+                                                        <p><i class="fas fa-paper-plane"></i></p>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                {{/if}}
+                            {{/each}}
+
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="notification-tmp">
+                </div>
+                <div class="notification">
+                    {{!-- <a href="">
+                        <div class="new-notification">
+                            <p>Khoa công nghệ thông tin vừa có thông báo mới</p>
+                            <p class="title">Thống kê mở môn học học kỳ hè Thống kê mở môn học học kỳ hè Thống kê mở môn học học kỳ hè</p>
+                        </div>
+                    </a> --}}
+                    <div class="title-viewall">
+                        <p>Thông báo mới <i class="fas fa-bell"></i></p>
+                        <a href="/trangthongbao">Xem tất cả</a>
+                    </div>
+                    <div class="box-notification">
+                        {{#each thongbao as |tb|}}
+                            {{#if tb.chan}}
+                                <a href="/chitietthongbao/{{tb.thongbao._id}}">
+                                    <div class="item item-b">
+                                        <p class="time">[{{tb.thongbao.namekhoa}}] - {{tb.thongbao.time}}</p>
+                                        <p class="title">{{tb.thongbao.title}}</p>
+                                        <p class="content">
+                                            {{tb.thongbao.content}}
+                                        </p>
+                                    </div>
+                                </a>
+                            {{else}}
+                                <a href="/chitietthongbao/{{tb.thongbao._id}}">
+                                    <div class="item item-a">
+                                        <p class="time">[{{tb.thongbao.namekhoa}}] - {{tb.thongbao.time}}</p>
+                                        <p class="title">{{tb.thongbao.title}}</p>
+                                        <p class="content">
+                                            {{tb.thongbao.content}}
+                                        </p>
+                                    </div>
+                                </a>
+                            {{/if}}
+
+                        {{/each}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+

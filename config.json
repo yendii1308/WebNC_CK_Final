@@ -1,0 +1,98 @@
+{
+    "google_key": "492422101557-n6928evn0j95nnfcjo709a670r1a3lv0.apps.googleusercontent.com",
+    "google_secret": "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",
+    "google_callback_url": "http://localhost:8000/auth/google/callback",
+    "database": {
+        "link_connect_bd": "mongodb+srv://doanwebnangcao:doan123456@doanwebnangcao.0runb.mongodb.net/doanwebnangcao2?retryWrites=true&w=majority"
+    },
+    "admin":{
+        "username": "admin",
+        "pass": "123456"
+    },
+    "khoa": [
+        {
+            "id": 1,
+            "name": "Phòng Công tác học sinh sinh viên (CTHSSV)"
+        },
+        {
+            "id": 2,
+            "name": "Phòng Đại học"
+        },
+        {
+            "id": 3,
+            "name": "Phòng Sau đại học"
+        },
+        {
+            "id": 4,
+            "name": "Phòng điện toán và máy tính"
+        },
+        {
+            "id": 5,
+            "name": "Phòng khảo thí và kiểm định chất lượng"
+        },
+        {
+            "id": 6,
+            "name": "Phòng tài chính"
+        },
+        {
+            "id": 7,
+            "name": "TDT Creative Language Center"
+        },
+        {
+            "id": 8,
+            "name": "Trung tâm tin học"
+        },
+        {
+            "id": 9,
+            "name": "Trung tâm đào tạo phát triển xã hội (SDTC)"
+        },
+        {
+            "id": 10,
+            "name": "Trung tâm phát triển Khoa học quản lý và Ứng dụng công nghệ (ATEM)"
+        },
+        {
+            "id": 11,
+            "name": "Trung tâm hợp tác doanh nghiệp và cựu sinh viên"
+        },
+        {
+            "id": 12,
+            "name": "Trung tâm ngoại ngữ - tin học – bồi dưỡng văn hóa"
+        },
+        {
+            "id": 13,
+            "name": "Viện chính sách kinh tế và kinh doanh"
+        },
+        {
+            "id": 14,
+            "name": "Khoa Mỹ thuật công nghiệp"
+        },
+        {
+            "id": 15,
+            "name": "Khoa Điện – Điện tử"
+        },
+        {
+            "id": 16,
+            "name": "Khoa Công nghệ thông tin"
+        },
+        {
+            "id": 17,
+            "name": "Khoa Quản trị kinh doanh"
+        },
+        {
+            "id": 18,
+            "name": "Khoa Luật "
+        },
+        {
+            "id": 19,
+            "name": "Khoa Lao động công đoàn"
+        },
+        {
+            "id": 20,
+            "name": "Khoa Tài chính ngân hàng"
+        },
+        {
+            "id": 20,
+            "name": "Khoa giáo dục quốc tế"
+        }
+    ]
+}
